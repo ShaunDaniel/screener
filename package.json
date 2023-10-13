@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@fontsource/dm-serif-text": "^5.0.15",
+    "@fontsource/ibm-plex-serif": "^5.0.8",
+    "react-router-dom": "^6.16.0"
+  }
+}
