@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "@fontsource/dm-serif-text": "^5.0.15",
-    "@fontsource/ibm-plex-serif": "^5.0.8",
+    "@fontsource/merriweather": "^5.0.8",
+    "axios": "^1.5.1",
     "react-router-dom": "^6.16.0"
   }
 }
