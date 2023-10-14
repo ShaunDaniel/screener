@@ -9,17 +9,16 @@ import {
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react';
-import axios from "axios"
+// import axios from "axios"
 
 
-function HomeGenreForm(props) {
+function HomeGenreForm() {
 
   const { colorMode, toggleColorMode } = useColorMode('black', 'white');
   const [selectedGenre, setSelectedGenre] = useState([]);
   const [genres,setGenres] = useState([])
 
   useEffect(()=>{
-    axios.defaults.baseURL = 'http://localhost:3000';
     const data = [
       {
         "id": 28,
@@ -99,6 +98,8 @@ function HomeGenreForm(props) {
       }
     ]
     setGenres(data)
+    
+    // axios.defaults.baseURL = 'http://localhost:3000';
     // axios.get('/genres').then((result) => {
     //   setGenres(result.data.genres)
     //   console.log(result.data.genres)
@@ -108,7 +109,7 @@ function HomeGenreForm(props) {
   },[])
   
 
-  // Function to handle genre selection
+  //  handle genre selection
   const handleGenreSelection = (genre) => {
     const genreExists = selectedGenre.includes(genre)
     genreExists ? setSelectedGenre(selectedGenre.filter((single_genre)=>genre!==single_genre)) : setSelectedGenre([...selectedGenre,genre]);
