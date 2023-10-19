@@ -7,7 +7,7 @@ function MovieList (props) {
   const [loading, setLoading] = useState(true); // Add a loading state
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/explore/${props.genre.id}`)
+    axios.get(`https://screener-backend.onrender.com/explore/${props.genre.id}`)
       .then((result) => {
         setMovieData(result.data.results);
         setLoading(false); // Set loading to false when data is loaded
