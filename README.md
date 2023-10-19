@@ -14,6 +14,6 @@ Through this project, I'll be practicing and learning more about integrating API
 
 You can explore the TMDB API documentation at [TMDB API Documentation](https://developer.themoviedb.org/docs).
 
-##preview :
+## preview :
 
 ![image](https://github.com/ShaunDaniel/screener/assets/73394707/9b4f2ef6-93fc-4064-9663-c08f3d4f1ff5)
