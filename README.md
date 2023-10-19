@@ -16,4 +16,5 @@ You can explore the TMDB API documentation at [TMDB API Documentation](https://d
 
 ## preview :
 
-![image](https://github.com/ShaunDaniel/screener/assets/73394707/9b4f2ef6-93fc-4064-9663-c08f3d4f1ff5)
+![image](https://github.com/ShaunDaniel/screener/assets/73394707/53b4903e-11bc-4397-acf4-83aaa6375684)
+
