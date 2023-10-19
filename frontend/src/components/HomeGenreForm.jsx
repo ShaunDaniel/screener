@@ -8,13 +8,15 @@ import {
   FormControl,
   useColorMode,
   useColorModeValue,
+  Link
 } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 // import axios from "axios"
 
 
 function HomeGenreForm() {
-
   const { colorMode, toggleColorMode } = useColorMode('black', 'white');
+
   const [selectedGenre, setSelectedGenre] = useState([]);
   const [genres,setGenres] = useState([])
 
@@ -108,6 +110,7 @@ function HomeGenreForm() {
     // });
   },[])
   
+  const navigate = useNavigate()
 
   //  handle genre selection
   const handleGenreSelection = (genre) => {
@@ -115,17 +118,18 @@ function HomeGenreForm() {
     genreExists ? setSelectedGenre(selectedGenre.filter((single_genre)=>genre!==single_genre)) : setSelectedGenre([...selectedGenre,genre]);
   };
 
+  const handleSubmit = () => {
+    const prefGenres = JSON.stringify(selectedGenre)
+    localStorage.setItem('pref_genres',prefGenres)
+    navigate('/feed')
+  }
 
   console.log(selectedGenre)
 
   return (
-    <Box p={0} m={0} width={{ base: '100%', md: '50%' }}>
-      <Stack direction={'row'} pt={'2%'} w={'100%'} justifyContent={'end'}>
-        <Button fontSize={'2xl'} rounded={'full'} onClick={toggleColorMode} alignSelf={'end'} mx={5}>
-          {colorMode === 'light' ? '🌙' : '🌞'}
-        </Button>
-      </Stack>
-      <Stack px={{ base: '5%', md: '15%' }} pt={2} h={'90%'} justifyContent={'space-evenly'}>
+    <Box p={0} m={0} h={"100%"} width={{ base: '100%', md: '50%' }}>
+
+      <Stack px={{ base: '5%', md: '15%' }} h={'80%'} justifyContent={'space-around'}>
         <Heading
           fontSize={{ base: '3xl', sm: '4xl', md: '5xl' }}
           fontFamily={'body'}
@@ -155,8 +159,8 @@ function HomeGenreForm() {
           })}
         </Grid>
         <FormControl>
-        <Button  w={{ base: '100%', xl: '50%' }} mt={5} px={5} py={8} mb={10} bgColor={useColorModeValue('blackAlpha.900', 'white')} color={useColorModeValue('white', 'blackAlpha.700')}>
-          Submit
+        <Button  w={{ base: '100%', xl: '50%' }} mt={5} px={5} py={8} mb={10} bgColor={useColorModeValue('blackAlpha.900', 'white')} color={useColorModeValue('white', 'blackAlpha.700')} onClick={handleSubmit}>
+          Next
         </Button>
         </FormControl>
       </Stack>

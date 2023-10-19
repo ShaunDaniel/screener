@@ -5,10 +5,11 @@ import {Stack} from '@chakra-ui/react';
 
 function Home() {
   return (
-    <Stack direction={{ base: 'column', md: 'row' }} height={'100%'}>
+    <Stack direction={{ base: 'column', md: 'row' }} height={'90%'}>
           <HomeBanner/>
           <HomeGenreForm />
     </Stack>
+
   )
 }
 

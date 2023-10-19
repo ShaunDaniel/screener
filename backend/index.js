@@ -29,6 +29,26 @@ app.use("/genres",(req,res)=>{
     });
 })
 
+app.use("/explore/:genreid",(req,res)=>{
+    const genreId = req.params.genreid
+    const options = {
+    method: 'GET',
+    url: `https://api.themoviedb.org/3/discover/movie?with_genres=${genreId}`,
+    headers: {
+        accept: 'application/json',
+        Authorization: `Bearer ${process.env.API_KEY}`
+    }
+    };
+
+    axios
+    .request(options)
+    .then(function (response) {
+        res.send(response.data);
+    })
+    .catch(function (error) {
+        console.error(error);
+    });
+})
 
 app.listen(port,()=>{
     console.log(`Listening on port ${port}`)
