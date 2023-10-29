@@ -1,29 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Heading, Flex, Card, Spinner } from '@chakra-ui/react'; // Import Spinner component
+import { Link, Heading, Flex, Card, Spinner, useColorModeValue } from '@chakra-ui/react';
 import axios from "axios";
 
-function MovieList (props) {
+function MovieList(props) {
   const [movieData, setMovieData] = useState([]);
-  const [loading, setLoading] = useState(true); // Add a loading state
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(`https://screener-backend.onrender.com/explore/${props.genre.id}`)
+    axios.get(process.env.API_URL || `http://localhost:3000/explore/${props.genre.id}`)
       .then((result) => {
         setMovieData(result.data.results);
-        setLoading(false); // Set loading to false when data is loaded
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
-        setLoading(false); // Set loading to false in case of an error
+        setLoading(false);
       });
-  }, []);
+  }, [props.genre.id]);
 
   return (
-    <Flex px={10} py={10} direction="column" >
-      <Heading fontSize="3xl" fontWeight="bold" color="white">
+    <Flex px={10} py={10} direction="column">
+      <Heading fontSize={{base:'2xl',md:"4xl"}} textAlign={{base:'center',md:'left'}} fontWeight="regular" fontFamily={'heading'} color={useColorModeValue('grey.800' ,'white')}>
         {`${props.genre.name} Movies`}
       </Heading>
-      {loading ? ( // Render loading spinner while data is being fetched
+      {loading ? (
         <Spinner
           thickness="4px"
           speed="0.65s"
@@ -35,7 +35,7 @@ function MovieList (props) {
       ) : (
         <Flex spacing={4} overflowX={'scroll'} gap={4}>
           {movieData.map((movie, index) => (
-            <Link key={movie.id}  href={`/movie/${movie.id}`}>
+            <Link key={movie.id} href={`/movie/${movie.id}`}>
               <Card
                 key={movie.id}
                 borderRadius={'2xl'}
@@ -51,7 +51,7 @@ function MovieList (props) {
               >
                 <Flex h={"100%"} justifyContent={'end'}>
                   <Flex bgGradient={'linear(transparent,black)'} borderRadius={'2xl'} h={"30%"} w={"100%"} alignSelf={'end'}>
-                    <Heading alignSelf={'end'} mt={5} fontSize={'xl'} color={'white'} p={5}  >
+                    <Heading alignSelf={'end'} mt={5} fontSize={'xl'} color={'white'} p={5}>
                       {movie.title}
                     </Heading>
                   </Flex>
