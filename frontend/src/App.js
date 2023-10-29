@@ -9,6 +9,7 @@ import Feed from './pages/Feed';
 import Movie from './pages/Movie';
 import Nav from './components/Nav';
 import theme from './theme';
+import NotFound from './pages/NotFound';
 
 
 
@@ -20,6 +21,7 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='feed' element={<Feed/>}/>
           <Route path='movie/:id' element={<Movie/>}/>
+          <Route path='*' element={<NotFound/>}/>
         </Routes>
     </ChakraProvider>
   );

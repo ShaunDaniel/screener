@@ -35,4 +35,8 @@ movieRouter.get("/movie/:movieid", (req, res) => {
   sendDataFromAPIURL(url,res)
 });
 
+movieRouter.get("/", (req, res) => {
+    res.send("Welcome to Screener Backend!")
+  });
+
 export default movieRouter;
