@@ -1,9 +1,8 @@
 import React from 'react'
 import {
-    Box,
-    Container,
     Heading,
     Stack,
+    filter,
     useColorModeValue,
   } from '@chakra-ui/react';
 
@@ -30,7 +29,7 @@ function HomeBanner() {
                     p={5}
                     bgColor={'black'}
                     fontFamily={'heading'}
-                    fontWeight={900}
+                    fontWeight={700}
                     rounded={'2xl'}
                 >
                     Good Movies🎬

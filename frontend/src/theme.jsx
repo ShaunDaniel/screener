@@ -2,8 +2,8 @@ import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
     fonts: {
-      heading: `'DM Serif Text', serif`,
-      body: `'Merriweather', serif`,
+      heading: `'DM Sans Variable', sans-serif`,
+      body: `'Open Sans Variable', sans-serif`,
     },
     initialColorMode: 'light',
     useSystemColorMode: false,
