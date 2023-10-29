@@ -2,7 +2,7 @@ import { Flex, Text, Badge, Stack, Heading, Image, useColorModeValue, Card, useD
 import { ArrowDownIcon, ArrowUpIcon } from '@chakra-ui/icons'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 
 
 function Movie() {
