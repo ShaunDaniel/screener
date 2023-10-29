@@ -2,14 +2,13 @@ import React from 'react'
 import {
     Heading,
     Stack,
-    filter,
     useColorModeValue,
-  } from '@chakra-ui/react';
+} from '@chakra-ui/react';
 
 
 function HomeBanner() {
     return (
-        
+
         <Stack
             h={{ base: '25%', md: '90vh' }}
             w={{ base: 'full', md: '50%' }}
@@ -18,9 +17,9 @@ function HomeBanner() {
             bgSize={'cover'}
             p={0}
             m={0}
-            display={{base:'none',md:'block'}}
-            filter={useColorModeValue("invert(0)","invert(100)")}
->
+            display={{ base: 'none', md: 'block' }}
+            filter={useColorModeValue("invert(0)", "invert(100)")}
+        >
             <Stack align={'center'} h={'100%'} justifyContent={'center'}>
                 <Heading
                     fontSize={{ base: '2xl', sm: '3xl', md: '4xl', xl: '5xl' }}

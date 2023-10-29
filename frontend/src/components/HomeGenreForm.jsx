@@ -10,94 +10,20 @@ import {
 } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import HomeGenreFormButton from './HomeGenreFormButton';
+import genres from "../data/genres.json"
 
 function HomeGenreForm() {
   const [selectedGenre, setSelectedGenre] = useState([]);
-    const genres = [{
-    "id": 28,
-    "name": "Action"
-  },
-  {
-    "id": 12,
-    "name": "Adventure"
-  },
-  {
-    "id": 16,
-    "name": "Animation"
-  },
-  {
-    "id": 35,
-    "name": "Comedy"
-  },
-  {
-    "id": 80,
-    "name": "Crime"
-  },
-  {
-    "id": 99,
-    "name": "Documentary"
-  },
-  {
-    "id": 18,
-    "name": "Drama"
-  },
-  {
-    "id": 10751,
-    "name": "Family"
-  },
-  {
-    "id": 14,
-    "name": "Fantasy"
-  },
-  {
-    "id": 36,
-    "name": "History"
-  },
-  {
-    "id": 27,
-    "name": "Horror"
-  },
-  {
-    "id": 10402,
-    "name": "Music"
-  },
-  {
-    "id": 9648,
-    "name": "Mystery"
-  },
-  {
-    "id": 10749,
-    "name": "Romance"
-  },
-  {
-    "id": 878,
-    "name": "Science Fiction"
-  },
-  {
-    "id": 10770,
-    "name": "TV Movie"
-  },
-  {
-    "id": 53,
-    "name": "Thriller"
-  },
-  {
-    "id": 10752,
-    "name": "War"
-  },
-  {
-    "id": 37,
-    "name": "Western"
-  }]
+
   const navigate = useNavigate();
 
   const handleGenreSelection = (genre) => {
-    console.log("Genre - ",genre)
-    if(selectedGenre.includes(genre)){
-      setSelectedGenre(selectedGenre.filter((g)=>g!==genre))
+    console.log("Genre - ", genre)
+    if (selectedGenre.includes(genre)) {
+      setSelectedGenre(selectedGenre.filter((g) => g !== genre))
     }
-    else{
-      setSelectedGenre([...selectedGenre,genre])
+    else {
+      setSelectedGenre([...selectedGenre, genre])
     }
 
   };
@@ -124,12 +50,12 @@ function HomeGenreForm() {
             <HomeGenreFormButton
               key={genre.name}
               genre={genre.name}
-              onChange={()=>handleGenreSelection(genre)}
+              onChange={() => handleGenreSelection(genre)}
             />
           ))}
         </Grid>
         <FormControl>
-          <Button w={{ base: '100%', xl: '50%' }} mt={5} px={5} py={8} mb={10} bgColor={useColorModeValue('blackAlpha.900', 'white')} color={useColorModeValue('white', 'blackAlpha.700')} onClick={handleSubmit}>
+          <Button w={{ base: '100%', xl: '50%' }} mt={5} px={5} py={8} mb={10} bgColor={useColorModeValue('gray.700', 'white')} color={useColorModeValue('white', 'blackAlpha.700')} onClick={handleSubmit}>
             Next
           </Button>
         </FormControl>

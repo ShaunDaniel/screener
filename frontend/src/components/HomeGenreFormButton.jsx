@@ -17,7 +17,7 @@ function HomeGenreFormButton(props) {
       <chakra.label
         display='flex'
         flexDirection='row'
-        alignItems='center'
+        justifyContent={'center'}
         gridColumnGap={2}
         maxW='36'
         bg={state.isChecked ? selectedBtnColor : unselectedBtnColor}
@@ -31,7 +31,6 @@ function HomeGenreFormButton(props) {
         <input {...getInputProps()} hidden />
         <Text
           color={state.isChecked ? selectedTxtColor : unselectedTxtColor}
-          textAlign={'center'}
           {...getLabelProps()}
         >
           {props.genre}
