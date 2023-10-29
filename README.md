@@ -16,5 +16,12 @@ You can explore the TMDB API documentation at [TMDB API Documentation](https://d
 
 ## preview :
 
-![image](https://github.com/ShaunDaniel/screener/assets/73394707/53b4903e-11bc-4397-acf4-83aaa6375684)
+[Vercel](https://screener-sigma.vercel.app/)
 
+![image](https://github.com/ShaunDaniel/screener/assets/73394707/821ab8a3-bc01-4385-b944-611cf433f5c4)
+
+
+![image](https://github.com/ShaunDaniel/screener/assets/73394707/0cbe6fa0-91d9-410f-b9d9-e1f38e358c5e)
+
+
+![image](https://github.com/ShaunDaniel/screener/assets/73394707/6e032b0d-bfcc-4d9c-aeab-95cf7b469883)
