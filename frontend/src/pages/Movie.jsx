@@ -17,7 +17,7 @@ function Movie() {
       onToggle()
     }, 500);
     axios
-      .get(`http://localhost:3000/movie/${movieId.id}`)
+      .get(`https://screener-backend.onrender.com/movie/${movieId.id}`)
       .then((result) => {
         console.log('result - ', result.data);
         setMovieData(result.data);

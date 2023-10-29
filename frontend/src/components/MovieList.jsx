@@ -7,7 +7,7 @@ function MovieList(props) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(process.env.API_URL || `http://localhost:3000/explore/${props.genre.id}`)
+    axios.get(process.env.API_URL || `https://screener-backend.onrender.com/explore/${props.genre.id}`)
       .then((result) => {
         setMovieData(result.data.results);
         setLoading(false);
