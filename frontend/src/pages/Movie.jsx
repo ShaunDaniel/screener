@@ -1,11 +1,12 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import { Stack } from '@chakra-ui/react';
 
 
 import MovieCard from '../components/MovieCard';
 import DiscussionCard from '../components/DiscussionCard';
+import MovieRating from '../components/MovieRating';
 
 function Movie() {
 
@@ -31,6 +32,7 @@ function Movie() {
   return (
     <Stack direction={'column'}>
       <MovieCard movieData={movieData} movieDataLoaded={movieDataLoaded}/>
+      <MovieRating />
       <DiscussionCard/>
     </Stack>
 

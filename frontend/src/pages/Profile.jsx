@@ -2,7 +2,7 @@ import { Flex, Stack, Card, Divider } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import UserDetails from '../components/UserDetails';
 import axios from "axios"
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 
 function Profile() {
     const params = useParams()
@@ -10,7 +10,7 @@ function Profile() {
     const [userData, setuserData] = useState([])
 
 
-    axios.get(`http://localhost:3000/user/${params.username}`).then((result) => {
+    axios.get(`http://screener-backend.onrender.com/user/${params.username}`).then((result) => {
         setuserDataLoaded(false)
         setuserData(result.data[0])
         setuserDataLoaded(true)

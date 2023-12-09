@@ -1,5 +1,5 @@
-import React, { useParams } from 'react'
-
+import React from 'react'
+import { useParams } from 'react-router-dom';
 import { Flex, Stack, Heading, Divider, Text, Image, Badge, Card } from '@chakra-ui/react';
 import UserDetailItem from './UserDetailItem';
 
