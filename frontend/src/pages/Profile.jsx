@@ -10,7 +10,7 @@ function Profile() {
     const [userData, setuserData] = useState([])
 
 
-    axios.get(`http://screener-backend.onrender.com/user/${params.username}`).then((result) => {
+    axios.get(`https://screener-backend.onrender.com/user/${params.username}`).then((result) => {
         setuserDataLoaded(false)
         setuserData(result.data[0])
         setuserDataLoaded(true)
